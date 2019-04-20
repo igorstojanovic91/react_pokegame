@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
 import Pokedex from './Pokedex'
 
-function shuffle(array) {
+var shuffle = array => {
     array.sort(() => Math.random() - 0.5);
+}
+
+var isWinner = (arr1, arr2) => {
+    let sum1 = 0
+    let sum2 = 0
+    arr1.forEach(e => sum1 += e.base_experience)
+    arr2.forEach(e => sum2 += e.base_experience)
+    console.log(sum1, sum2)
+    if (sum1 > sum2) {
+        return true
+    } else {
+        return false
+    }
 }
 
 class Pokegame extends React.Component {
@@ -24,10 +37,11 @@ class Pokegame extends React.Component {
         //cut array in half
         let hand1 = arr.slice(0,arr.length/2)
         let hand2 = arr.slice(4, arr.length)
+
         return (
             <div>
-                <Pokedex id = {this.props.pokemon.id} name = {this.props.pokemon.name} type = {this.props.pokemon.type} base_experience = {this.props.pokemon.base_experience} />
-                <Pokedex />
+                <Pokedex pokemon={hand1} isWinner={isWinner(hand1, hand2)} />
+                <Pokedex pokemon={hand2} isWinner={isWinner(hand2, hand1)}/>
             </div>
         )
     }

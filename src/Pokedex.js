@@ -7,7 +7,7 @@ class Pokedex extends React.Component {
         console.log('props', this.props)
         return (
             <div className="Pokedex">
-                <h1>Pokedex</h1>
+                <h1 className={this.props.isWinner ? 'Pokedex-winner': 'Pokedex-loser'}>{this.props.isWinner ? 'Winner Hand':'Loser Hand'}</h1>
                 <div className="Pokedex-container">
                     {this.props.pokemon.map(p => (
                     <Pokecard id = {p.id} name = {p.name} type = {p.type} base_experience = {p.base_experience} />
