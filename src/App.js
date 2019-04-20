@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Pokedex from './Pokedex'
+import Pokegame from './Pokegame'
 
 
 class App extends Component {
