@@ -1,3 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .App {
   text-align: center;
 }

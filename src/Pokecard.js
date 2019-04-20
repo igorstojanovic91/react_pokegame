@@ -11,8 +11,10 @@ class Pokecard extends React.Component {
         let imgSrc = `${POKE_API}${padded(pokemon.id.toString(), 3)}.png`
         return (
             <div className="Pokecard">
-                <h1>{pokemon.name}</h1>
-                <img src={imgSrc} />
+                <h2 className="Pokecard-name">{pokemon.name}</h2>
+                <img src={imgSrc} className="Pokecard-image" />
+                <p className="Pokecard-type">Type: {pokemon.type}</p>
+                <p className="Pokecard-exp">EXP: {pokemon.base_experience}</p>
             </div>
         )
     }
