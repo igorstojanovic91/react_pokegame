@@ -18,12 +18,9 @@ class Pokedex extends React.Component {
         return (
             <div className="Pokedex">
                 <h1>Pokedex</h1>
-                <Pokecard 
-                id={7}
-                name="Squirtle"
-                type="water"
-                base_experience={72}
-                />
+                {this.props.pokemon.map(p => (
+                    <Pokecard id = {p.id} name = {p.name} type = {p.type} base_experience = {p.base_experience} />
+                ))}
             </div>
         )
     }
