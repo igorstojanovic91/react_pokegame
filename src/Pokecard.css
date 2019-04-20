@@ -28,3 +28,12 @@
 .Pokecard-exp {
     margin-top: 15px;
 }
+
+.Pokecard img {
+    transition: all ease 500ms;
+}
+
+.Pokecard img:hover {
+    transform: scale(1.25);
+    opacity: 0.75;
+}
